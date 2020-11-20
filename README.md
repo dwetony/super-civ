@@ -1,1 +1,1 @@
-# idleCiv
+# super-civ
