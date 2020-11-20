@@ -2,12 +2,57 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Gold Miner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Food Miner</title>
   </head>
   <body>
-    <p id="goldMined">0 Gold Mined</p>
-    <button onclick="mineGold()">Mine Gold</button>
-    <button onclick="buyGoldPerClick()" id="perClickUpgrade">Upgrade Pickaxe (Currently Level 1) Cost: 10 Gold</button>
+    <div class="navbar w3-bar w3-black">
+      <button class="w3-bar-item w3-button" onclick="openTab('civTab')">Civilization</button>
+      <button class="w3-bar-item w3-button" onclick="openTab('researchTab')">Research</button>
+      <button class="w3-bar-item w3-button" onclick="openTab('statsTab')">Stats</button>
+    </div>
+    <div class="row">
+      <div class="side">
+          <p><span>Food</span><span id="foodGathered">0</span> <span id="foodPerSec"> 0 /sec</span></p>
+          <p><span>Wood</span><span id="woodGathered">0</span> <span id="woodPerSec"> 0 /sec</span></p>
+          <p><span>Rock</span><span id="rockGathered">0</span> <span id="rockPerSec"> 0 /sec</span></p>
+      </div>
+      <div class="main">
+        <div id="civTab" class="tab">
+          <div class="row">
+              <button onclick="gatherFood()">Food</button>
+              <button onclick="gatherWood()">Wood</button>
+              <button onclick="gatherRock()">Rock</button>
+          </div>
+          <div class="row">
+            <button onClick="buyRake()" id="rakeUpgrade" title="Cost: 10 Food"> Buy Rake </button>
+            <button onClick="buyAxe()" id="axeUpgrade" title="Cost: 10 Wood"> Buy Axe </button>
+            <button onClick="buyPick()" id="pickUpgrade" title="Cost: 10 Rock"> Buy Pick </button>
+          </div>
+        </div>
+        <div id="researchTab" style="display:none" class="tab">
+          <div class="row">
+              <button onclick="research('ag')" id='rsrch_ag'>Agriculture</button>
+              <button onclick="research('ag2')" id='rsrch_ag2' >Agriculture2</button>
+          </div>
+          <div class="row">
+          </div>
+        </div>
+        <div id="statsTab" style="display:none" class="tab">
+          <div class="row">
+            <div id="stats">
+              <p><span>Alltime food collected: </span><span id="alltime-food"> 0 </span></p>
+              <p><span>Alltime wood collected: </span><span id="alltime-wood"> 0 </span></p>
+              <p><span>Alltime rock collected: </span><span id="alltime-rock"> 0 </span></p>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="main.js" charset="utf-8" type="text/javascript"></script>
   </body>
 </html>
